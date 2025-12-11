@@ -1,0 +1,16 @@
+import { Module } from '@nestjs/common';
+import { MongooseModule } from '@nestjs/mongoose';
+import { PeriodsService } from './periods.service';
+import { PeriodsController } from './periods.controller';
+import { Period, PeriodSchema } from './schemas/period.schema';
+
+@Module({
+  imports: [
+    MongooseModule.forFeature([
+      { name: Period.name, schema: PeriodSchema }
+    ])
+  ],
+  controllers: [PeriodsController],
+  providers: [PeriodsService],
+})
+export class PeriodsModule {}
