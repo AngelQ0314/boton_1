@@ -4,8 +4,6 @@ import { Document } from 'mongoose';
 @Schema({ collection: 'prueba1' })
 export class Period extends Document {
 
-  // ❗ NO declarar _id → Mongoose lo añade solo
-
   @Prop({ type: Object })
   restaurant_id: Record<string, any>;
 
